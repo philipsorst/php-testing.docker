@@ -3,6 +3,7 @@ MAINTAINER Philip Washington Sorst <philip@sorst.net>
 
 # add PPA for PHP 7
 	RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list
+	RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 
 # install packages
 	RUN apt-get update \
