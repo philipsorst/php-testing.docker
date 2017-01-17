@@ -1,6 +1,9 @@
 FROM ubuntu:16.04
 MAINTAINER Philip Washington Sorst <philip@sorst.net>
 
+# Required for add-apt-repository
+	RUN apt-get update && apt-get install software-properties-common
+
 # add PPA for PHP 7
 	RUN add-apt-repository ppa:ondrej/php
 
