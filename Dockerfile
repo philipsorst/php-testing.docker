@@ -1,11 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Philip Washington Sorst <philip@sorst.net>
 
-# Required for add-apt-repository
-	RUN apt-get update && apt-get install software-properties-common
-
 # add PPA for PHP 7
-	RUN add-apt-repository ppa:ondrej/php
+	RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/ondrej-ubuntu-php-xenial.list
 
 # install packages
 	RUN apt-get update \
