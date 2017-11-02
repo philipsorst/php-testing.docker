@@ -27,4 +27,5 @@ MAINTAINER Philip Washington Sorst <philip@sorst.net>
 			php7.1-mysql \
 			php7.1-sqlite \
 			php-memcached \
-			composer
+			composer \
+			npm
