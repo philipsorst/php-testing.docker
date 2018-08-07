@@ -15,6 +15,7 @@ RUN apt-get install -qy \
 	php7.2-sqlite3 \
 	php7.2-zip \
 	php7.2-mbstring \
+	php7.2-curl \
 	composer \
 	npm
 #        php7.1-fpm \
