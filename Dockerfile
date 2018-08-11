@@ -19,6 +19,7 @@ RUN apt-get install -qy \
 	php7.2-gd \
 	composer \
 	librsvg2-bin \
+	fonts-ubuntu \
 	npm
 
 # Install yarn
