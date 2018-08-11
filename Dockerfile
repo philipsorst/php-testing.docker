@@ -18,6 +18,7 @@ RUN apt-get install -qy \
 	php7.2-curl \
 	php7.2-gd \
 	composer \
+	librsvg2-bin \
 	npm
 
 # Install yarn
