@@ -17,6 +17,7 @@ RUN apt-get install -qy \
 	php7.2-mbstring \
 	php7.2-curl \
 	php7.2-gd \
+	curl \
 	composer \
 	librsvg2-bin \
 	fonts-ubuntu \
