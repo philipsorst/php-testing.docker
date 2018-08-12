@@ -10,7 +10,7 @@ RUN apt-get update
 
 # Install packages
 RUN apt-get install -qy \
-        php7.2-cli \
+    php7.2-cli \
 	php7.2-xml \
 	php7.2-sqlite3 \
 	php7.2-zip \
@@ -21,6 +21,9 @@ RUN apt-get install -qy \
 	librsvg2-bin \
 	fonts-ubuntu \
 	npm
+
+# Install deployer
+RUN curl -L https://deployer.org/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
 
 # Install yarn
 RUN npm -g install yarn
