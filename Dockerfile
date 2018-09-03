@@ -18,6 +18,7 @@ RUN apt-get install -qy \
 	php7.2-mbstring \
 	php7.2-curl \
 	php7.2-gd \
+	php7.2-intl \
 	curl \
 	rsync \
 	composer \
