@@ -30,5 +30,5 @@ RUN apt-get update \
         composer \
         npm
 
-# Update NodeJs
-RUN npm cache clean -f && npm install -g n && n 8.9 && npm install -g npm
+# Update NodeJs and install Yarn
+RUN npm cache clean -f && npm install -g n && n 8.9 && npm install -g npm && npm install -g yarn
