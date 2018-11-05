@@ -19,6 +19,7 @@ RUN apt-get install -qy \
 	php7.2-curl \
 	php7.2-gd \
 	php7.2-intl \
+	php7.2-redis \
 	curl \
 	rsync \
 	composer \
