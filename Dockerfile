@@ -30,8 +30,8 @@ RUN apt-get install -qy \
 # Install deployer
 RUN curl -L https://deployer.org/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
 
-# Install yarn
-RUN npm -g install yarn
+# Update node and install yarn
+RUN npm cache clean -f && npm install -g n && n lts && npm install -g npm && npm install -g yarn
 
 # Cleanup
 RUN apt-get clean
