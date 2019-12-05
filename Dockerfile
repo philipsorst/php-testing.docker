@@ -17,16 +17,16 @@ RUN apt-get update && \
 
 # Install packages
 RUN apt-get install -qy \
-    php7.3-cli \
-	php7.3-xml \
-	php7.3-sqlite3 \
-	php7.3-mysql \
-	php7.3-zip \
-	php7.3-mbstring \
-	php7.3-curl \
-	php7.3-gd \
-	php7.3-intl \
-	php7.3-redis \
+    php7.4-cli \
+	php7.4-xml \
+	php7.4-sqlite3 \
+	php7.4-mysql \
+	php7.4-zip \
+	php7.4-mbstring \
+	php7.4-curl \
+	php7.4-gd \
+	php7.4-intl \
+	php7.4-redis \
 	composer \
 	librsvg2-bin \
 	fonts-ubuntu \
