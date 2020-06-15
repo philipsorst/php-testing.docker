@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Philip Washington Sorst <philip@sorst.net>
 
 #Set Timezone
@@ -6,14 +6,11 @@ RUN echo "Europe/Berlin" > /etc/timezone
 RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 # Prepare System and add additional sources
-RUN apt-get update && \
-    apt-get install -qy \
+RUN apt update && \
+    apt install -qy \
     curl \
     rsync \
-    gnupg && \
-    echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main" > /etc/apt/sources.list.d/ondrej-php.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
-    apt-get update
+    gnupg
 
 # Install packages
 RUN apt-get install -qy \
@@ -36,7 +33,11 @@ RUN apt-get install -qy \
 RUN curl -L https://deployer.org/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
 
 # Update node and install yarn
-RUN npm cache clean -f && npm install -g n && n lts && npm install -g npm && npm install -g yarn
+RUN npm cache clean -f \
+    #&& npm install -g n \
+    #&& n lts \
+    #&& npm install -g npm \
+    && npm install -g yarn
 
 # Cleanup
 RUN apt-get clean
