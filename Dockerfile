@@ -27,7 +27,10 @@ RUN apt-get install -qy \
 	composer \
 	librsvg2-bin \
 	fonts-ubuntu \
-	npm
+	npm \
+    && echo "zend.assertions=1" >> /etc/php/7.4/mods-available/assertions.ini \
+    && echo "assert.exception=1" >> /etc/php/7.4/mods-available/assertions.ini \
+    && phpenmod assertions
 
 # Install deployer
 RUN curl -L https://deployer.org/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
