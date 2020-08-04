@@ -36,7 +36,7 @@ RUN apt-get install -qy \
     && phpenmod assertions
 
 # Install deployer
-RUN curl -L https://deployer.org/deployer.phar > /usr/local/bin/deployer && chmod +x /usr/local/bin/deployer
+RUN composer global require "deployer/deployer:6.8.*"
 
 # Update node and install yarn
 RUN npm cache clean -f && npm install -g n && n lts && npm install -g npm && npm install -g yarn
