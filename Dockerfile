@@ -33,7 +33,8 @@ RUN apt-get install -qy \
     && phpenmod assertions
 
 # Install deployer
-RUN composer global require "deployer/deployer:6.8.*"
+RUN composer global require "deployer/deployer:6.8.*" \
+    && ln -sf ~/.config/composer/vendor/deployer/deployer/bin/dep /usr/local/bin/deployer
 
 # Update node and install yarn
 RUN npm cache clean -f \
