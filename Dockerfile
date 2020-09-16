@@ -8,6 +8,8 @@ RUN echo "Europe/Berlin" > /etc/timezone \
         curl \
         rsync \
         gnupg \
+        openssh-client \
+        git \
         php7.4-cli \
         php7.4-xml \
         php7.4-sqlite3 \
