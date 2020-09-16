@@ -24,6 +24,7 @@ RUN apt-get install -qy \
 	php7.4-gd \
 	php7.4-intl \
 	php7.4-redis \
+	php7.4-pcov \
 	composer \
 	librsvg2-bin \
 	fonts-ubuntu \
@@ -32,16 +33,9 @@ RUN apt-get install -qy \
     && echo "assert.exception=1" >> /etc/php/7.4/mods-available/assertions.ini \
     && phpenmod assertions
 
-# Install deployer
-RUN composer global require "deployer/deployer:6.8.*" \
-    && ln -sf ~/.config/composer/vendor/deployer/deployer/bin/dep /usr/local/bin/deployer
-
 # Update node and install yarn
-RUN npm cache clean -f \
-    #&& npm install -g n \
-    #&& n lts \
-    #&& npm install -g npm \
-    && npm install -g yarn
+RUN npm install -g yarn \
+    && npm cache clean -f
 
 # Cleanup
 RUN apt-get clean
