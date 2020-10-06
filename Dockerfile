@@ -10,6 +10,7 @@ RUN echo "Europe/Berlin" > /etc/timezone \
         gnupg \
         openssh-client \
         git \
+        unzip \
         php7.4-cli \
         php7.4-xml \
         php7.4-sqlite3 \
