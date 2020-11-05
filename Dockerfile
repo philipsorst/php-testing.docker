@@ -9,8 +9,16 @@ RUN echo "Europe/Berlin" > /etc/timezone \
         rsync \
         gnupg \
         openssh-client \
+        ca-certificates \
         git \
         unzip \
+    # Add Yarn sources
+    && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    # Update added sources
+    && apt-get update \
+    # Install Deps
+    && apt install -qy --no-install-recommends \
         php7.4-cli \
         php7.4-xml \
         php7.4-sqlite3 \
@@ -24,11 +32,10 @@ RUN echo "Europe/Berlin" > /etc/timezone \
         php7.4-pcov \
         librsvg2-bin \
         fonts-ubuntu \
-        npm \
+#        npm \
+        yarn\
     && echo "zend.assertions=1" >> /etc/php/7.4/mods-available/assertions.ini \
     && echo "assert.exception=1" >> /etc/php/7.4/mods-available/assertions.ini \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && phpenmod assertions \
-    && npm install -g yarn \
-    && npm cache clean -f \
     && apt-get clean
